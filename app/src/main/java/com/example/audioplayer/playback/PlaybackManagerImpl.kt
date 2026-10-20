@@ -42,7 +42,7 @@ class PlaybackManagerImpl @Inject constructor(
     override fun forwardToNext() {
         exoPlayer.seekForward()
     }
-
+//second lesson
     override fun playLocal(song: LocalSong) {
         Log.d(LOG_KEY, "Локальное воспроизведение: ${song.uri}")
 

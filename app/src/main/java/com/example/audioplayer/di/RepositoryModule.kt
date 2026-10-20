@@ -24,7 +24,7 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindPlaybackManager(playbackManagerImpl: PlaybackManagerImpl): PlaybackManager
-
+    //second lesson
     @Binds
     @Singleton
     abstract fun bindLocalAudioRepository(localAudioRepositoryImpl: LocalAudioRepositoryImpl): LocalAudioRepository
