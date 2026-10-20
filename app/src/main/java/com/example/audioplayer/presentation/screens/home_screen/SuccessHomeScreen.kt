@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import com.example.audioplayer.domain.model.Song
 import com.example.audioplayer.ui.theme.Purple40
 import com.example.audioplayer.utils.SongItem
+//first lesson
 
 @Composable
 fun SuccessHomeScreen(

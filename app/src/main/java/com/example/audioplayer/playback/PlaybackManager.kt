@@ -4,6 +4,7 @@ import com.example.audioplayer.domain.model.Song
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import com.example.audioplayer.domain.model.LocalSong
+//first lesson
 
 interface PlaybackManager {
 

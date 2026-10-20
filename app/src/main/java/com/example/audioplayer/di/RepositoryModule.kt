@@ -11,6 +11,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+//first lesson
 
 @Module
 @InstallIn(SingletonComponent::class)

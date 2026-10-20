@@ -25,6 +25,7 @@ import com.example.audioplayer.ui.theme.DarkPrimary
 import com.example.audioplayer.ui.theme.PurpleGrey40
 import com.example.audioplayer.ui.theme.SongName
 import com.example.audioplayer.ui.theme.SwipeBoxColor
+//first lesson
 
 @Composable
 fun SongItem(

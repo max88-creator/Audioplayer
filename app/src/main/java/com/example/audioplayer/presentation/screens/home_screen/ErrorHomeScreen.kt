@@ -10,6 +10,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.audioplayer.ui.theme.SwipeBoxColor
+//first lesson
 
 @Composable
 fun ErrorHomeScreen(

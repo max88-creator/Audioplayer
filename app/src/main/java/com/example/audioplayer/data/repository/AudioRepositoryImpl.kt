@@ -7,7 +7,7 @@ import com.example.audioplayer.domain.repository.RepositoryScenarioProvider
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 import kotlin.time.Duration.Companion.seconds
-
+//first lesson
 class AudioRepositoryImpl @Inject constructor(
     private val scenarioProvider: RepositoryScenarioProvider
 ) : AudioRepository {

@@ -16,6 +16,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+//first lesson
 
 class PlaybackManagerImpl @Inject constructor(
     private val exoPlayer: ExoPlayer,
