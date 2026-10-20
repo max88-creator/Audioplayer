@@ -2,7 +2,7 @@ package com.example.audioplayer.presentation.viewmodel
 
 import com.example.audioplayer.domain.model.LocalSong
 import com.example.audioplayer.domain.model.Song
-
+//second lesson
 data class LocalAudioState(
     val songs: List<LocalSong>,
     val selectedSong: LocalSong? = null,

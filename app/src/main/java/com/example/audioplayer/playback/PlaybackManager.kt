@@ -15,6 +15,7 @@ interface PlaybackManager {
     fun pause()
     fun stop()
     fun forwardToNext()
+    //second lesson
     fun playLocal(song: LocalSong)
 }
 
