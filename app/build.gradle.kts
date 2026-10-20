@@ -74,9 +74,9 @@ dependencies {
     ksp(libs.androidx.room.compiler)
 
     //Retrofit
-
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging.interceptor)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
