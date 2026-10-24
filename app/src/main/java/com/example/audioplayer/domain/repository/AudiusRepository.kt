@@ -4,7 +4,9 @@ import com.example.audioplayer.data.remote.model.Track
 
 interface AudiusRepository {
     suspend fun searchTrack(
-        query: String
+        query: String,
+        limit: Int,
+        offset: Int
     ): List<Track>
 }
 

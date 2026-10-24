@@ -44,7 +44,6 @@ fun AudiusTrackItem(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-         //   .height(60.dp)
             .clip(shape = RoundedCornerShape(15.dp))
             .background(color = Rusty1)
             .clickable {

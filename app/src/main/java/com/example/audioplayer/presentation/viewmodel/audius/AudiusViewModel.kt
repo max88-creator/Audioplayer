@@ -72,31 +72,70 @@ class AudiusViewModel @Inject constructor(
     }
 
     fun onEvent(event: AudiusEvent) {
-        when(event) {
+        when (event) {
             is AudiusEvent.SelectSong -> selectSong(track = event.track)
             is AudiusEvent.Play -> {
                 selectSong(track = event.track)
                 play(track = event.track)
             }
+
             is AudiusEvent.Stop -> {
                 stop()
             }
         }
     }
-    fun searchTracks(query: String) {
+
+    fun searchTracks(
+        query: String,
+        limit: Int,
+        offset: Int
+    ) {
         viewModelScope.launch {
             try {
                 _searchResult.value = AudioResult.Loading
-                val result = repository.searchTrack(query)
+                val result = repository.searchTrack(
+                    query,
+                    limit = limit,
+                    offset = offset,
+                )
                 _searchResult.value = AudioResult.Success(result)
+            } catch (e: Exception) {
+                _searchResult.value = AudioResult.Error(e.message.toString())
+            }
+        }
+    }
 
+
+    fun updateList(
+        query: String,
+        limit: Int,
+        offset: Int
+    ) {
+        viewModelScope.launch {
+            try {
+
+                val newRes = repository.searchTrack(
+                    query = query,
+                    limit = limit,
+                    offset = offset
+                )
+
+                when (val current = searchResult.value) {
+                    is AudioResult.Success -> {
+                        val newResponce = current.data + newRes
+                        _searchResult.value = AudioResult.Success(data = newResponce)
+                    }
+
+                    else -> {
+
+                    }
+                }
             } catch (e: Exception) {
                 _searchResult.value = AudioResult.Error(e.message.toString())
             }
         }
     }
 }
-
 
 
 /*

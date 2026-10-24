@@ -10,8 +10,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredWidthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -49,7 +51,7 @@ fun PlayListScreen(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Spacer(modifier = Modifier.height(55.dp))
+        Spacer(modifier = Modifier.height(25.dp))
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -61,7 +63,9 @@ fun PlayListScreen(
                 onValueChange = { input = it },
                 onSearchTracks = {
                     viewModel.searchTracks(
-                        query = input
+                        query = input,
+                        limit = 10,
+                        offset = 0
                     )
                 }
             )
@@ -77,7 +81,10 @@ fun PlayListScreen(
             }
 
             is AudioResult.Success -> {
+
                 val tracks = result.data
+
+                Spacer(modifier = Modifier.height(25.dp))
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -110,7 +117,21 @@ fun PlayListScreen(
                         )
                         Spacer(modifier = Modifier.height(9.dp))
                     }
+                    item {
+                        Button(
+                            onClick = {
+                                viewModel.updateList(
+                                    query = input,
+                                    limit = 10,
+                                    offset = tracks.size
+                                )
+                            }
+                        ) {
+                            Text("Load more")
+                        }
+                    }
                 }
+                Spacer(modifier = Modifier.height(19.dp))
             }
         }
     }
