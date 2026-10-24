@@ -103,7 +103,7 @@ fun LocalMusic(
                     artist = item.artist,
                     title = item.title,
                     isPlaying = state.isPlaying &&
-                            state.selectedSong?.id?.toLong()
+                            state.selectedSong?.id
                             == item.id,
                     onPauseClick = {
                         viewModel.pause()

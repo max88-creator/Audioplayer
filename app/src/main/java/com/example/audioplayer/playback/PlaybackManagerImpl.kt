@@ -5,6 +5,7 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
+import com.example.audioplayer.data.remote.model.Track
 import com.example.audioplayer.domain.model.LocalSong
 import com.example.audioplayer.domain.model.Song
 import com.example.audioplayer.utils.LOG_KEY
@@ -54,8 +55,20 @@ class PlaybackManagerImpl @Inject constructor(
         exoPlayer.play()
     }
 
+    override fun playAudius(track: Track) {
+        Log.d(LOG_KEY, "Playing from AudiusApi: ${track.user} ${track.title}")
+
+        val mediaItem = MediaItem.Builder()
+            .setUri("https://api.audius.co/v1/tracks/${track.id}/stream")
+            .build()
+
+        exoPlayer.setMediaItem(mediaItem)
+        exoPlayer.prepare()
+        exoPlayer.play()
+    }
+
     private val scope = CoroutineScope(Dispatchers.IO)
-    val _event = MutableSharedFlow<String>()
+    private val _event = MutableSharedFlow<String>()
     override val event = _event.asSharedFlow()
     override fun toPrevious() {
         exoPlayer.seekToPrevious()

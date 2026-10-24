@@ -13,7 +13,7 @@ class AudiusRepositoryImpl @Inject constructor(
             query = query,
             limit = 10,
             offset = 0
-        )
+        ).data
     }
 }
 

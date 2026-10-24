@@ -1,10 +1,10 @@
 package com.example.audioplayer.playback
 
+import com.example.audioplayer.data.remote.model.Track
 import com.example.audioplayer.domain.model.Song
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import com.example.audioplayer.domain.model.LocalSong
-//first lesson
 
 interface PlaybackManager {
 
@@ -15,7 +15,7 @@ interface PlaybackManager {
     fun pause()
     fun stop()
     fun forwardToNext()
-    //second lesson
     fun playLocal(song: LocalSong)
+    fun playAudius(track: Track)
 }
 
