@@ -33,7 +33,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.audioplayer.presentation.viewmodel.LocalAudioViewModel
 import com.example.audioplayer.ui.theme.LightBlue
 import com.example.audioplayer.utils.SongItem
-//second lesson
 @Composable
 fun LocalMusic(
     viewModel: LocalAudioViewModel = hiltViewModel()

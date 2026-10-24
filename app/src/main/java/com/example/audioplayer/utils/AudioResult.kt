@@ -1,9 +1,8 @@
 package com.example.audioplayer.utils
-//first lesson
 
-sealed class AudioResult<T> {
+sealed class AudioResult< out T> {
     object Loading: AudioResult<Nothing>()
     class Success<T>(val data: T): AudioResult<T>()
-    class Error<T>(val message: String): AudioResult<Nothing>()
+    class Error(val message: String): AudioResult<Nothing>()
 }
 

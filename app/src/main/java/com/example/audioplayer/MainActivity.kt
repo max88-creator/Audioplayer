@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.audioplayer.presentation.screens.audius.PlayListScreen
 import com.example.audioplayer.presentation.screens.home_screen.HomeScreen
 import com.example.audioplayer.presentation.screens.local_audio.LocalMusic
 import com.example.audioplayer.ui.theme.AudioPlayerTheme
@@ -16,7 +17,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AudioPlayerTheme {
-           LocalMusic()
+                PlayListScreen()
             }
         }
     }

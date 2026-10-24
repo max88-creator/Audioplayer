@@ -1,5 +1,5 @@
 package com.example.audioplayer.data.remote.model
-//third lesson
+
 data class Track(
     val id: String,
     val title: String,

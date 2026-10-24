@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-//first lesson
 
 class PlaybackManagerImpl @Inject constructor(
     private val exoPlayer: ExoPlayer,
@@ -42,7 +41,7 @@ class PlaybackManagerImpl @Inject constructor(
     override fun forwardToNext() {
         exoPlayer.seekForward()
     }
-//second lesson
+
     override fun playLocal(song: LocalSong) {
         Log.d(LOG_KEY, "Локальное воспроизведение: ${song.uri}")
 
